@@ -93,14 +93,12 @@ def _create_task_tool(tools, subagents: list[SubAgent], model, state_schema):
         # Get the requested sub-agent
         sub_agent = agents[subagent_type]
 
-        # build a dictionary context payload for the sub-agent invocation.
-        sub_agent_input = {
-            **state,
-            "messages": [{"role": "user", "content": description}]
-        }
+        # Create isolated context with only the task description
+        # This is the key to context isolation - no parent history
+        state["messages"] = [{"role": "user", "content": description}]
 
         # Execute the sub-agent in isolation
-        result = sub_agent.invoke(sub_agent_input)
+        result = sub_agent.invoke(state)
 
         # Return results to parent agent via Command state update
         return Command(
