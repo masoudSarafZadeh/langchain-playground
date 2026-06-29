@@ -12,8 +12,8 @@ from langchain_core.tools import BaseTool, InjectedToolCallId, tool
 from langgraph.prebuilt import InjectedState, create_react_agent
 from langgraph.types import Command
 
-from deep_agents_from_scratch.prompts import TASK_DESCRIPTION_PREFIX
-from deep_agents_from_scratch.state import DeepAgentState
+from prompts import TASK_DESCRIPTION_PREFIX
+from state import DeepAgentState
 
 
 class SubAgent(TypedDict):
