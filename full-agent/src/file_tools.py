@@ -22,7 +22,7 @@ from state import DeepAgentState
 @tool(description=LS_DESCRIPTION)
 def ls(state: Annotated[DeepAgentState, InjectedState]) -> list[str]:
     """List all files in the virtual filesystem."""
-    return list(state.get("files", {}).keys())
+    return list(dict(state.get("files") or {}).keys())
 
 
 @tool(description=READ_FILE_DESCRIPTION, parse_docstring=True)
@@ -43,7 +43,7 @@ def read_file(
     Returns:
         Formatted file content with line numbers, or error message if file not found
     """
-    files = state.get("files", {})
+    files = dict(state.get("files") or {})
     if file_path not in files:
         return f"Error: File '{file_path}' not found"
 
@@ -84,8 +84,8 @@ def write_file(
     Returns:
         Command to update agent state with new file content
     """
-    # Create a shallow copy to prevent mutating the LangGraph state object in place
-    files = dict(state.get("files", {}))
+    # Safeguard against None initializations and prevent in-place mutation
+    files = dict(state.get("files") or {})
     files[file_path] = content
     
     return Command(
