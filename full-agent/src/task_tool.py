@@ -93,8 +93,7 @@ def _create_task_tool(tools, subagents: list[SubAgent], model, state_schema):
         # Get the requested sub-agent
         sub_agent = agents[subagent_type]
 
-        # FIX: Avoid direct mutation of the injected graph state. 
-        # Instead, build a fresh dictionary context payload for the sub-agent invocation.
+        # build a dictionary context payload for the sub-agent invocation.
         sub_agent_input = {
             **state,
             "messages": [{"role": "user", "content": description}]
