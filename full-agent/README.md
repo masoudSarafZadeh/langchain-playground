@@ -30,3 +30,42 @@ full_agent/
 ├── main.py                # Main orchestration application
 ├── README.md              # Project documentation
 └── requirements.txt       # Local dependency pinning
+```
+## Quick Start & Setup
+
+Follow these steps to run this cookbook sample locally:
+
+### 1. Navigate to the Sub-Repository
+```bash
+cd full_agent
+```
+### 2. Install Dependencies
+It is highly recommended to use a virtual environment (venv).
+
+```bash
+pip install -r requirements.txt
+```
+### 3. Setup Your Environment Variables
+Copy the configuration template to create a live .env file:
+
+```bash
+cp example.env .env
+```
+Open the newly created .env file and insert your respective API credentials:
+
+```plaintext
+ANTHROPIC_API_KEY=your_actual_claude_api_key_here
+TAVILY_API_KEY=your_actual_tavily_api_key_here
+```
+### 4. Run the Agent
+Execute the runtime orchestrator:
+
+```bash
+python main.py
+```
+## Key Design Features
+* **State-Saving Components:** Uses Command(update={...}) states to keep the agent's actions completely trackable.
+
+* **Context Isolation:** Sub-agents are systematically provisioned with a fresh memory frame containing only the text relevant to their individual task, protecting the manager from token bloat.
+
+* **RBAC (Role-Based Access Control):** Sub-agents are restricted to safe toolsets, ensuring they can perform research without accidentally altering master file paths or mutating the supervisor's agenda.
