@@ -22,7 +22,7 @@ This recipe implements and showcases two different RAG methods:
 
 ```text
 RAG-agent/
-├── .env.example          # Environment credential setup template
+├── example.env          # Environment credential setup template
 ├── main.py               # Combined ingestion and dual-agent runtime script
 ├── README.md             # Implementation instructions
 └── requirements.txt      # Module dependencies (Chroma, PyPDF, Gemini)
