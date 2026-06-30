@@ -32,7 +32,7 @@ SQL-agent/
 ├── requirements.txt       # Module dependencies (LangGraph, OpenRouter, Psycopg2)
 └── README.md              # Project documentation and architectural overview
 ```
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### 1. Navigate to the Directory
 ```bash
@@ -61,7 +61,7 @@ Run the main script to watch the streaming node steps and inspect the final dual
 ```bash
 python main.py
 ```
-## 📱 Mobile-Ready Output Layer
+## Mobile-Ready Output Layer
 
 The script aggregates the conversational text response along with uncleaned database elements (such as item metadata and product image URLs) into a standardized application JSON structure:
 
