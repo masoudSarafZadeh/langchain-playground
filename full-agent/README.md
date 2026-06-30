@@ -26,7 +26,7 @@ full_agent/
 │   ├── state.py           # Core graph state definitions
 │   ├── task_tool.py       # Sub-agent factory abstractions
 │   └── todo_tools.py      # State-driven checklist modifiers
-├── .env.example           # Environment template configuration
+├── example.env           # Environment template configuration
 ├── main.py                # Main orchestration application
 ├── README.md              # Project documentation
 └── requirements.txt       # Local dependency pinning
