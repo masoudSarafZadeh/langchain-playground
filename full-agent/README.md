@@ -56,6 +56,7 @@ Open the newly created .env file and insert your respective API credentials:
 ```plaintext
 ANTHROPIC_API_KEY=your_actual_claude_api_key_here
 TAVILY_API_KEY=your_actual_tavily_api_key_here
+LANGSMITH_API_KEY=your_langsmith_api_key_here
 ```
 ### 4. Run the Agent
 Execute the runtime orchestrator:
