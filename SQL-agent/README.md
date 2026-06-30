@@ -48,7 +48,7 @@ pip install -r requirements.txt
 Copy the sample environment file to create a live .env file:
 
 ```bash
-cp example.env
+cp example.env .env
 Open the .env file and fill in your respective credentials:
 ```
 ```Plaintext
