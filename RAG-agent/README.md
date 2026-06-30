@@ -26,3 +26,33 @@ RAG-agent/
 ├── main.py               # Combined ingestion and dual-agent runtime script
 ├── README.md             # Implementation instructions
 └── requirements.txt      # Module dependencies (Chroma, PyPDF, Gemini)
+```
+## Setup & Execution
+
+### 1. Navigate and Install
+```bash
+cd RAG-agent
+pip install -r requirements.txt
+```
+### 2. Prepare Environment Variables
+Copy the template configuration:
+
+```bash
+cp .env.example .env
+```
+Open your new .env file and supply your key:
+
+```plaintext
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+### 3. Add Your Document
+Create a data/ folder if it doesn't exist.
+
+Drop your target PDF file inside it.
+
+Open main.py and update the PDF_FILE_PATH variable to point to your file (e.g., data/my_book.pdf).
+
+### 4. Run the Script
+```bash
+python main.py
+```
