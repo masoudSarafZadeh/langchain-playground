@@ -38,7 +38,7 @@ pip install -r requirements.txt
 Copy the template configuration:
 
 ```bash
-cp example.env
+cp example.env .env
 ```
 Open your new .env file and supply your key:
 
