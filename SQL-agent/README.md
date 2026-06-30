@@ -31,3 +31,50 @@ SQL-agent/
 ├── example.env            # Environment configuration template
 ├── requirements.txt       # Module dependencies (LangGraph, OpenRouter, Psycopg2)
 └── README.md              # Project documentation and architectural overview
+```
+## 🚀 Setup & Installation
+
+### 1. Navigate to the Directory
+```bash
+cd SQL-agent
+```
+### 2. Install Dependencies
+Ensure you have a virtual environment active, then run:
+
+```bash
+pip install -r requirements.txt
+```
+### 3. Environment Configuration
+Copy the sample environment file to create a live .env file:
+
+```bash
+cp example.env .env
+Open the .env file and fill in your respective credentials:
+```
+```Plaintext
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+DATABASE_URL=postgresql://postgres.your_project_id:your_password@aws-host.pooler.supabase.com:5432/postgres
+```
+### 4. Running the Agent
+Run the main script to watch the streaming node steps and inspect the final dual-layered device output payload:
+
+```bash
+python main.py
+```
+## 📱 Mobile-Ready Output Layer
+
+The script aggregates the conversational text response along with uncleaned database elements (such as item metadata and product image URLs) into a standardized application JSON structure:
+
+```json
+{
+  "llm_response": "سرآغاز پاسخ صمیمانه به زبان فارسی...",
+  "products": [
+    {
+      "id": 1,
+      "product_name": "رب گوجه فرنگی",
+      "price_after_off": 45000,
+      "image": "[https://supabase-storage-url.com/tomato_paste.png](https://supabase-storage-url.com/tomato_paste.png)"
+    }
+  ]
+}
+```
