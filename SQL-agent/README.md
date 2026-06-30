@@ -2,7 +2,7 @@
 
 This sub-repository contains an advanced, state-driven SQL Agent built using **LangGraph** and **LangChain**. It connects to a PostgreSQL database (hosted via Supabase), translates natural language user requests into syntactically correct SQL queries, validates them for errors, and yields structured payloads ready for frontend mobile applications.
 
-## 📊 Agent Architecture
+## Agent Architecture
 
 Unlike standard text-to-SQL workflows that fail silently when a query throws an error or returns empty results, this agent implements a reflective loop with automatic fallback mechanics and grading routines.
 
@@ -22,7 +22,7 @@ Here is the exact runtime execution graph generated dynamically by LangGraph:
    * If the data is deemed irrelevant or empty, it routes to **`rewrite_question`**, where conversational fillers are stripped out, and a cleaner search term is pushed back into `generate_query` to start a corrective loop.
 6. **Polished Response (`generate_answer`)**: Formulates an engaging, user-facing sales assistant response written entirely in Persian.
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 SQL-agent/
